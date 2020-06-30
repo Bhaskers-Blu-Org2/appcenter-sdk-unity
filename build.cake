@@ -701,7 +701,7 @@ Task("RegisterUnity").Does(() =>
 
     // This will produce an error, but that's okay because the project "noproject" is used so that the
     // root isn't opened by unity, which could potentially remove important .meta files.
-    ExecuteUnityCommand($"-serial {serialNumber} -username {username} -password {password}", "noproject");
+    ExecuteUnityCommand($"-force-free -serial {serialNumber} -username {username} -password {password}", "noproject");
     var found = false;
     if (Statics.Context.IsRunningOnUnix())
     {
